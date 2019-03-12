@@ -21,6 +21,7 @@ function handleVideoPlayerMutation() {
   const adShowing = checkForAds();
   if (adShowing) {
     silenceVolume();
+    clickSkipButton();
   } else {
     turnUpVolume();
   }
@@ -49,4 +50,22 @@ function turnUpVolume() {
       all[i].volume = YAS_GLOBAL_VOLUME;
     }
   }
+}
+
+function eventFire(el, etype){
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+
+function clickSkipButton() {
+  setTimeout(() => {
+    const skip = document.getElementsByClassName('ytp-ad-skip-button-slot');
+    const skipID = skip[0].id;
+    eventFire(document.getElementById(skipID), 'click');
+  }, 7000);
 }
