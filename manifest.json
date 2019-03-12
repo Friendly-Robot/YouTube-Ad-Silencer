@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "YouTube Ad Silencer",
-  "short_name": "YouTube Ad Silencer",
-  "description": "Silence > Advertisements!",
-  "version": "1.0.0.1",
+  "name": "YouTube Ad Skipper",
+  "short_name": "YouTube Ad Skipper",
+  "description": "The beauty is in the silence between the sounds.",
+  "version": "1.0.1.0",
   "author": "Andy Li",
   "icons": { 
     "16": "icon16.png",
@@ -12,7 +12,7 @@
   },
   "browser_action": {
     "default_icon": "icon128.png", 
-    "default_title": "YouTube Ad Silencer"
+    "default_title": "YouTube Ad Skipper"
   },
   "content_scripts": [
     {
